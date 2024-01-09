@@ -1,9 +1,13 @@
-name: Beautiful Jekyll CI
+name: Build About Me
 on: [push, pull_request]
 jobs:
   build:
-    name: Build Jekyll
+    name: Build
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: aboutme
     steps:
       - uses: actions/checkout@v3
       - name: Build the site in the jekyll/builder container
